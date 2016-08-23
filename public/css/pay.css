@@ -1,0 +1,144 @@
+
+body
+{
+   font-family:SimHei,黑体;
+}
+.container
+{
+    font-size: 24px;
+}
+.right
+{
+    float:right;
+}
+.tr{border:2px white solid;width: 100%;margin:10px;}
+td.left{width: 100px;text-align: right;}
+#price,#number,#goodmessage,#cost,td.mid{min-width: 100px;text-align:center;}
+tr.paytb1
+{
+    height: 40px;
+    border-bottom: 3px solid white;
+    min-width: 100px;
+}
+table
+{
+    width:100%;
+}
+table.paytb td{border-left: 3px solid white;border-right: 3px solid white;}
+.input
+{
+    width: 400px; 
+    height: 34px; 
+    padding: 6px 12px;
+    margin: 8px;
+    font-size: 14px; 
+    line-height: 1.428571429; 
+    color: #555555; 
+    vertical-align: middle; 
+    background-color: #ffffff; 
+    border: 1px solid #cccccc; 
+    border-radius: 4px; 
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); 
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); 
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; 
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; 
+   
+}
+textarea
+{
+    width: 400px;
+    margin-bottom: 8px;
+    margin-left: 8px;
+    padding: 6px 12px; 
+    font-size: 14px; 
+    line-height: 1.428571429; 
+    color: #555555; 
+    vertical-align: middle; 
+    background-color: #ffffff; 
+    border: 1px solid #cccccc; 
+    border-radius: 4px; 
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); 
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); 
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; 
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.btnl1
+{
+    float:right;
+    background-color: #f0f0f0;
+    margin-right: 40px;
+    margin-bottom:20px;
+    width: 80px;
+    height: 32px;
+    border:1px solid #f0f0f0;
+    font: icon-ok;
+    font-family:"Microsoft YaHei",微软雅黑;
+}
+.btnl2
+{
+    background-color: #b5e0d8;
+    margin-left: 40px;
+    margin-bottom:20px;
+    width: 80px;
+    height: 32px;
+    border:1px solid #b5e0d8;
+    font: icon-ok;
+    font-family:"Microsoft YaHei",微软雅黑;
+}
+p.jin-e-la
+{
+    padding-bottom: 20px;
+    height:16px;
+    font-size:16px;
+    
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    border-bottom-style: none;
+    width: 100%;
+}
+.zong-jin-e
+{
+    color: red;
+    text-align: right bottom;
+    
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    border-bottom-style: none;
+    width: 100%;
+}
+#shouhuodizhi,#shouhuoren
+{
+    text-align: right bottom;
+    
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    border-bottom-style: none;
+    width: 100%;
+}
+#cost
+{   
+    text-align: right;
+    border: solid white 2px;
+    background-color: #b5e0d8;
+    height: 50px;
+    border-top-style: solid;
+    border-right-style:solid ;
+    border-left-style: solid ;
+    border-bottom-style: none;
+    width: 100%;
+}
+#tdbottom
+{
+    text-align: right;
+    border: solid white 2px;
+    background-color: #b5e0d8;
+    height: 50px;
+    border-top-style:solid white 2px;
+    border-right-style:solid white 2px;
+    border-left-style:solid white 2px;
+    border-bottom-style:dashed grey 2px;
+    width: 100%;
+}
