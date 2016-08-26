@@ -37,4 +37,21 @@ class User_model extends CI_Model {
 		$row = $query->row_array();
 		return $row['user_name']; 
 	}
+
+	public function check_email($data)
+	{
+		$query = $this->db->select('user_id')
+						->from('User')
+						->where('e-mail',$data['e-mail'])
+						->get();
+		$row = $query->row_array();
+		if ($row['user_id']!=NULL) {
+			$check_email = 'failed';
+
+		} else {
+			$check_email = 'success';
+			$this->db->insert('User',$data);
+		}
+		return $check_email; 
+	}
 }

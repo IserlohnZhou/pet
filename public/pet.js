@@ -20,8 +20,16 @@ var cardlist = new Vue({
         ]
     },
     methods:{
-        show: function () {
-            
+        getlist:function(){
+            this.$http.get('/cardlist').then(
+                (response) =>{
+                console.log(response.data)
+                this.cards = response.data
+
+            }).catch(function(response) {
+
+                console.log(response)
+            })
         }
     }
 
@@ -40,8 +48,32 @@ var cardminilist = new Vue({
             {text:'card1',img:'/ei'},
             {text:'card1',img:'/ei'},
         ]
+    },
+    methods:{
+        getlist:function(){
+            this.$http.get('/cardminilist').then(
+                (response) =>{
+                console.log(response.data)
+                this.cards = response.data
+
+            }).catch(function(response) {
+
+                console.log(response)
+            })
+        }
     }
 
+})
+
+
+var loginbtn = new Vue({
+    el: '#btn-login',
+    methods:{
+        login:function(){
+            loginbox.showable = 'block'
+            console.log('login-btn')
+        }
+    }
 })
 
 Vue.http.options.emulateJSON = true;
@@ -49,16 +81,19 @@ var loginbox = new Vue({
     el: '.login-box',
     data:{
         item: {},
-        showable: 'block'
+        showable: 'none'
     },
     methods:{
         confirm: function () {
-            this.$http.post('/login/check',this.item).then(
+            this.$http.post('/login',this.item).then(
                 (response) =>{
                 console.log(response.data)
             this.showable = 'none'
+            cardlist.getlist()
+            cardminilist.getlist()
 
         }).catch(function(response) {
+
                 console.log(response)
             })
         }
@@ -69,7 +104,8 @@ var searchbox = new Vue({
     el:'.search-box',
     data:{
         searchtext:'',
-        showable: 'none'
+        showable: 'none',
+        results: {}
     },
     methods: {
         search: function () {
@@ -80,11 +116,16 @@ var searchbox = new Vue({
                 this.$http.get('/search?searchtext=' + this.searchtext).then(
                     (response) => {
                     console.log(response.data)
+                    this.results = response.data
                     this.showable = 'block'
             }).catch(function (response) {
+                    alert(response)
                     console.log(response)
                 })
             }
+        },
+        onEnter: function(){
+            window.open("/searchresult")
         }
     }
 })
@@ -93,3 +134,28 @@ searchbox.$watch('searchtext',function () {
         this.search()
 })
 
+var userpage = new Vue({
+    el:'#user-page',
+    data:{
+        userinfo:{},
+        vertpos: 100,
+        showable: 'none',
+        cards:[
+            {text:'card1',img:'/ei'},
+            {text:'card2',img:'/ei'},
+            {text:'card1',img:'/ei'},
+            {text:'card1',img:'/ei'},
+            {text:'card1',img:'/ei'},
+        ]
+    },
+    methods:{
+
+    }
+})
+
+if ( ! ( !-[1,]) ) {  //非IE6浏览器
+    //$('.card-large').css( 'left', ( $(window).width() - 1002 ) / 2 );
+    $(window).scroll(function(){
+        $('.card-large').css( 'top', 100 - $(window).scrollTop()/2 );
+    });
+}
